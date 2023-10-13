@@ -1,0 +1,26 @@
+From fb4dca9de61ff10d6064409ee0958a78dc1ffcca Mon Sep 17 00:00:00 2001
+From: Xavier Guimard <yadd@debian.org>
+Date: Mon, 14 Dec 2020 06:28:26 +0100
+Subject: =?UTF-8?q?Fix=20for=20pako=20=E2=89=A5=202?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ src/binding.js | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+--- a/src/binding.js
++++ b/src/binding.js
+@@ -3,10 +3,7 @@
+ 
+ var assert = require('assert')
+ 
+-var Zstream = require('pako/lib/zlib/zstream')
+-var zlib_deflate = require('pako/lib/zlib/deflate.js')
+-var zlib_inflate = require('pako/lib/zlib/inflate.js')
+-var constants = require('pako/lib/zlib/constants')
++var { Zstream, zlib_deflate, zlib_inflate, constants } = require('pako');
+ 
+ for (var key in constants) {
+   exports[key] = constants[key]
