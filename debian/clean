@@ -1,0 +1,4 @@
+test/fixtures/person.jpg
+test/fixtures/person.jpg.gz
+lib/
+test/tmp/
