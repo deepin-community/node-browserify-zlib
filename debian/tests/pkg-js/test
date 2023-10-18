@@ -1,0 +1,3 @@
+convert rose: test/fixtures/person.jpg
+gzip -9 -n < test/fixtures/person.jpg > test/fixtures/person.jpg.gz
+tap -R spec --no-cov `ls test/test-*.js|grep -v test/test-zlib-invalid-input.js|grep -v test/test-zlib-write-after-close.js|grep -v test/test-zlib-write-after-flush.js`

@@ -1,15 +1,29 @@
-Source: template-repository
-Section: unknown
+Source: node-browserify-zlib
+Section: javascript
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Bastien Roucariès <rouca@debian.org>
+Build-Depends: debhelper-compat (= 13)
+ , dh-sequence-nodejs
+ , imagemagick-6.q16 <!nocheck> | imagemagick <!nocheck>
+ , node-babel7
+ , node-pako (>= 2.0.2+ds~) <!nocheck>
+ , node-tap <!nocheck>
+ , node-tape <!nocheck>
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/js-team/node-browserify-zlib
+Vcs-Git: https://salsa.debian.org/js-team/node-browserify-zlib.git
+Homepage: https://github.com/devongovett/browserify-zlib
+Testsuite: autopkgtest-pkg-nodejs
+Rules-Requires-Root: no
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: node-browserify-zlib
+Architecture: all
+Depends: ${misc:Depends}
+ , node-pako (>= 2.0.2+ds~)
+Multi-Arch: foreign
+Description: Full zlib module for browserify
+ This module emulates node.js' zlib module for Browserify using pako.
+ Thus allowing one to use zlib API in browser context.
+ .
+ Node.js is an event-based server-side JavaScript engine.
